@@ -137,65 +137,61 @@ Comme indiqué dans votre formation, il existe trois manières d’implémenter 
 
 Adatum a chargé Holly d’activer la MFA pour tous ses utilisateurs Microsoft 365, à la fois internes et externes. Toutefois, pour tester l’implémentation du projet pilote Microsoft 365 d’Adatum, Holly souhaite faire en sorte que les membres du groupe de projet pilote M365 ne soient pas obligés d’utiliser MFA pour se connecter. Une fois le projet pilote terminé, Holly compte mettre à jour la stratégie en supprimant l’exclusion de ce groupe de l’exigence d’authentification multifacteur. La stratégie inclura également deux autres exigences. Elle exigera MFA pour toutes les applications cloud, même si un utilisateur se connecte à partir d’une localisation approuvée. 
 
-1. Lors de l’exercice de labo précédent, vous avez travaillé sur LON-DC1. Dans cette tâche, vous allez revenir sur votre ordinateur Client 1. <br/>
-
-    Basculez vers **LON-CL1**.
-
-2. Sur la machine virtuelle LON-CL1, le **Centre d’administration Microsoft 365** devrait encore être ouvert dans votre navigateur Microsoft Edge suite à une tâche précédente. Vous devez être connecté à Microsoft 365 en tant que **Holly Dickson**.
+1. Sur la machine virtuelle LON-CL1, le **Centre d’administration Microsoft 365** devrait encore être ouvert dans votre navigateur Microsoft Edge suite à une tâche précédente. Vous devez être connecté à Microsoft 365 en tant que **Holly Dickson**.
    
-3. Dans le **Centre d’administration Microsoft 365**, dans la section **Centres d’administration** du volet de navigation, sélectionnez **Identité**. Cela ouvre le centre d’administration Microsoft Entra dans un nouvel onglet de navigateur. Dans la fenêtre **Choisir un compte** qui s’affiche, sélectionnez le **compte d’Holly Dickson**.
+2. Dans le **Centre d’administration Microsoft 365**, dans la section **Centres d’administration** du volet de navigation, sélectionnez **Identité**. Cela ouvre le centre d’administration Microsoft Entra dans un nouvel onglet de navigateur. Dans la fenêtre **Choisir un compte** qui s’affiche, sélectionnez le **compte d’Holly Dickson**.
 
-4. Dans le **centre d’administration Microsoft Entra**, sélectionnez **Protection** dans le volet de navigation, puis **Accès conditionnel**.
+3. Dans le **centre d’administration Microsoft Entra**, sélectionnez **Protection** dans le volet de navigation, puis **Accès conditionnel**.
 
-5. Sur la page **Accès conditionnel | Vue d’ensemble**, sélectionnez **Stratégies** dans le volet de navigation central.
+4. Sur la page **Accès conditionnel | Vue d’ensemble**, sélectionnez **Stratégies** dans le volet de navigation central.
 
-6. Sur la page **Accès conditionnel | Stratégies**, dans la barre de menus en haut de la page, sélectionnez **+Créer une stratégie**.
+5. Sur la page **Accès conditionnel | Stratégies**, dans la barre de menus en haut de la page, sélectionnez **+Créer une stratégie**.
 
-7. Dans la fenêtre **Nouvelle stratégie d’accès conditionnel**, entrez **MFA pour tous les utilisateurs Microsoft 365** dans le champ **Nom**.
+6. Dans la fenêtre **Nouvelle stratégie d’accès conditionnel**, entrez **MFA pour tous les utilisateurs Microsoft 365** dans le champ **Nom**.
 
-8. Vous commencerez par définir l’exigence MFA pour les utilisateurs. Sous le groupe **Utilisateurs**, sélectionnez **0 utilisateurs et groupes sélectionnés**. Cela affiche deux onglets : **Inclure** et **Exclure**.
+7. Vous commencerez par définir l’exigence MFA pour les utilisateurs. Sous le groupe **Utilisateurs**, sélectionnez **0 utilisateurs et groupes sélectionnés**. Cela affiche deux onglets : **Inclure** et **Exclure**.
 
-9. Sous l’onglet **Inclure**, sélectionnez **Tous les utilisateurs**. Notez le message d’avertissement qui s’affiche. Vous allez réagir à cet avertissement lors des deux étapes suivantes.
+8. Sous l’onglet **Inclure**, sélectionnez **Tous les utilisateurs**. Notez le message d’avertissement qui s’affiche. Vous allez réagir à cet avertissement lors des deux étapes suivantes.
 
-10. Sélectionnez l’onglet **Exclure**. Pour éviter le verrouillage système, comme indiqué dans le message d’avertissement précédent, vous souhaitez exclure vos Administrateurs généraux (en l’occurrence, Holly). Holly souhaite également exclure les autres membres du groupe de projet pilote Microsoft 365 pour des raisons de rapidité lors des tests. Une fois Microsoft 365 en ligne chez Adatum, Holly supprimera le groupe de projets pilotes de la liste Exclure dans cette stratégie d’accès conditionnel, et s’exclura simplement elle-même, l’Administrateur MOD et quelques autres Administrateurs généraux. Mais pour l’instant, Holly veut exclure l’ensemble du groupe de projets pilotes. <br/>
+9. Sélectionnez l’onglet **Exclure**. Pour éviter le verrouillage système, comme indiqué dans le message d’avertissement précédent, vous souhaitez exclure vos Administrateurs généraux (en l’occurrence, Holly). Holly souhaite également exclure les autres membres du groupe de projet pilote Microsoft 365 pour des raisons de rapidité lors des tests. Une fois Microsoft 365 en ligne chez Adatum, Holly supprimera le groupe de projets pilotes de la liste Exclure dans cette stratégie d’accès conditionnel, et s’exclura simplement elle-même, l’Administrateur MOD et quelques autres Administrateurs généraux. Mais pour l’instant, Holly veut exclure l’ensemble du groupe de projets pilotes. <br/>
 
     Pour ce faire, cochez la case **Utilisateurs et groupes**. 
 
-11. Dans la fenêtre **Sélectionner des utilisateurs et des groupes exclus** qui s’affiche, vous sélectionnerez le groupe de projets pilotes Microsoft 365. L’onglet **Tous** s’affiche par défaut. Pour trouver rapidement le groupe de projet pilote, sélectionnez l’onglet **Groupes**. Dans la liste des groupes actifs, cochez la case en regard du groupe **Projet pilote M365**, puis sélectionnez le bouton **Sélectionner** en bas de la fenêtre. De retour dans la fenêtre **Nouvelle stratégie d’accès conditionnel**, notez le message qui s’affiche dans la section **Utilisateurs**. 
+10. Dans la fenêtre **Sélectionner des utilisateurs et des groupes exclus** qui s’affiche, vous sélectionnerez le groupe de projets pilotes Microsoft 365. L’onglet **Tous** s’affiche par défaut. Pour trouver rapidement le groupe de projet pilote, sélectionnez l’onglet **Groupes**. Dans la liste des groupes actifs, cochez la case en regard du groupe **Projet pilote M365**, puis sélectionnez le bouton **Sélectionner** en bas de la fenêtre. De retour dans la fenêtre **Nouvelle stratégie d’accès conditionnel**, notez le message qui s’affiche dans la section **Utilisateurs**. 
 
-12. Vous allez maintenant définir l’exigence MFA pour toutes les applications cloud. Dans la section **Ressources cibles**, sélectionnez **Aucune ressource cible sélectionnée**. Cela affiche deux onglets : **Inclure** et **Exclure**.
+11. Vous allez maintenant définir l’exigence MFA pour toutes les applications cloud. Dans la section **Ressources cibles**, sélectionnez **Aucune ressource cible sélectionnée**. Cela affiche deux onglets : **Inclure** et **Exclure**.
 
-13. Sélectionnez le champ déroulant **Sélectionner à quoi cette stratégie s’applique** pour afficher les différentes options du menu déroulant. Sélectionnez **Ressources (anciennement applications cloud)**. 
+12. Sélectionnez le champ déroulant **Sélectionner à quoi cette stratégie s’applique** pour afficher les différentes options du menu déroulant. Sélectionnez **Ressources (anciennement applications cloud)**. 
 
-14. Sous l’onglet **Inclure**, notez que le paramètre par défaut est **Aucune**. Si vous n’aviez pas modifié ce paramètre, aucune application cloud (y compris Microsoft 365) n’exigerait la MFA. Ainsi, même si vous aviez créé cette stratégie et sélectionné l’option pour exiger la MFA de tous les utilisateurs, mais que vous aviez conservé la valeur de **Ressources cibles** sur **Aucune**, aucun utilisateur se connectant à Microsoft 365 ne serait obligé d’utiliser la MFA. <br/>
+13. Sous l’onglet **Inclure**, notez que le paramètre par défaut est **Aucune**. Si vous n’aviez pas modifié ce paramètre, aucune application cloud (y compris Microsoft 365) n’exigerait la MFA. Ainsi, même si vous aviez créé cette stratégie et sélectionné l’option pour exiger la MFA de tous les utilisateurs, mais que vous aviez conservé la valeur de **Ressources cibles** sur **Aucune**, aucun utilisateur se connectant à Microsoft 365 ne serait obligé d’utiliser la MFA. <br/>
 
     Dans l’onglet **Inclure**, sélectionnez l’option **Sélectionner les ressources**. Cette opération affiche deux sections : **Modifier le filtre** et **Sélectionner**. Dans la section **Sélectionner**, sélectionnez **Aucun**. 
 
-15. Dans le volet **Sélectionner des ressources** qui s’affiche, faites défiler la liste des applications afin d’afficher toutes les différentes applications pour lesquelles vous pourriez avoir besoin de l’authentification multifacteur. **Ne sélectionnez AUCUNE des applications.** Nous vous demandons de faire défiler cette liste simplement pour que vous puissiez constater le degré de précision que vous pouvez appliquer lorsque vous exigez la MFA, dans le cas où vous décideriez de limiter MFA à certaines applications dans vos déploiements réels.  <br/>
+14. Dans le volet **Sélectionner des ressources** qui s’affiche, faites défiler la liste des applications afin d’afficher toutes les différentes applications pour lesquelles vous pourriez avoir besoin de l’authentification multifacteur. **Ne sélectionnez AUCUNE des applications.** Nous vous demandons de faire défiler cette liste simplement pour que vous puissiez constater le degré de précision que vous pouvez appliquer lorsque vous exigez la MFA, dans le cas où vous décideriez de limiter MFA à certaines applications dans vos déploiements réels.  <br/>
 
     Pour Adatum, Holly souhaite exiger MFA pour toutes les applications cloud, ce qui est généralement un scénario métier plus courant que la sélection d’applications spécifiques. Dans l’onglet **Inclure**, sélectionnez l’option **Toutes les ressources (anciennement « Toutes les applications cloud »)**. Adatum n’exclura aucune application cloud de l’authentification MFA. Vous pouvez sélectionner l’onglet **Exclure** si vous souhaitez afficher les options proposées. Il fonctionne essentiellement de la même façon que l’onglet **Inclure**. Vous pouvez afficher cet onglet, mais ne sélectionnez aucune application cloud pour l’exclusion. 
 
-16. Pour finir, vous allez définir l’exigence MFA pour toutes les localisations de connexion utilisateur. Dans certains scénarios, il se peut que les organisations exigent MFA uniquement si un utilisateur se connecte à partir d’une localisation non approuvée. Toutefois, Adatum souhaite exiger la MFA pour tous les utilisateurs inclus, indépendamment de l’endroit d’où ils se connectent. <br/>
+15. Pour finir, vous allez définir l’exigence MFA pour toutes les localisations de connexion utilisateur. Dans certains scénarios, il se peut que les organisations exigent MFA uniquement si un utilisateur se connecte à partir d’une localisation non approuvée. Toutefois, Adatum souhaite exiger la MFA pour tous les utilisateurs inclus, indépendamment de l’endroit d’où ils se connectent. <br/>
 
     Sous **Conditions**, sélectionnez **0 condition sélectionnée**. Cette opération affiche une liste des conditions potentielles que la stratégie vérifiera. Pour cet exercice de labo, sous la condition **Localisations**, sélectionnez **Non configuré**. Cette opération affiche un bouton bascule **Configurer** et deux onglets, **Inclure** et **Exclure**. Les deux onglets sont actuellement désactivés.
 
-17. Définissez le bouton bascule **Configurer** sur **Oui** afin d’activer les deux onglets. 
+16. Définissez le bouton bascule **Configurer** sur **Oui** afin d’activer les deux onglets. 
 
-18. Sous l’onglet **Inclure**, vérifiez que l’option **Tous les réseaux ou emplacements** est sélectionnée (sélectionnez-la si nécessaire). Sélectionnez l’onglet **Exclure**. Si votre organisation reconnaît des adresses IP ou des plages d’adresses spécifiques comme étant « approuvées », vous pouvez exclure l’exigence MFA si un utilisateur se connecte à partir de l’une de ces localisations. Toutefois, Adatum souhaite exiger la MFA pour toutes les tentatives de connexion utilisateur, quelle que soit leur localisation. Cela comprend les connexions des utilisateurs internes et externes. Vérifiez que l’option **Réseaux et emplacements sélectionnés** est sélectionnée, et sous la section **Sélectionner**, vérifier que **Aucun** est indiqué. En ne spécifiant aucun emplacement sélectionné, ce paramètre garantit qu’aucun emplacement n’est exclu de MFA. 
+17. Sous l’onglet **Inclure**, vérifiez que l’option **Tous les réseaux ou emplacements** est sélectionnée (sélectionnez-la si nécessaire). Sélectionnez l’onglet **Exclure**. Si votre organisation reconnaît des adresses IP ou des plages d’adresses spécifiques comme étant « approuvées », vous pouvez exclure l’exigence MFA si un utilisateur se connecte à partir de l’une de ces localisations. Toutefois, Adatum souhaite exiger la MFA pour toutes les tentatives de connexion utilisateur, quelle que soit leur localisation. Cela comprend les connexions des utilisateurs internes et externes. Vérifiez que l’option **Réseaux et emplacements sélectionnés** est sélectionnée, et sous la section **Sélectionner**, vérifier que **Aucun** est indiqué. En ne spécifiant aucun emplacement sélectionné, ce paramètre garantit qu’aucun emplacement n’est exclu de MFA. 
 
-19. Dans la section **Contrôles d’accès**, dans le groupe **Octroyer**, sélectionnez **0 contrôles sélectionnés**. Un volet **Octroyer** s’affiche.
+18. Dans la section **Contrôles d’accès**, dans le groupe **Octroyer**, sélectionnez **0 contrôles sélectionnés**. Un volet **Octroyer** s’affiche.
 
-20. Dans le volet **Octroyer** qui s’affiche, vérifiez que l’option **Autoriser l’accès** est sélectionnée (sélectionnez-la si nécessaire). Notez tous les contrôles d’accès disponibles qui peuvent être activés avec cette stratégie. Cette stratégie ne nécessitera que la MFA, vous devez donc cocher la case **Exiger l’authentification multifacteur**. Sélectionnez le bouton **Sélectionner** en bas du volet **Octroyer** afin de fermer le volet. 
+19. Dans le volet **Octroyer** qui s’affiche, vérifiez que l’option **Autoriser l’accès** est sélectionnée (sélectionnez-la si nécessaire). Notez tous les contrôles d’accès disponibles qui peuvent être activés avec cette stratégie. Cette stratégie ne nécessitera que la MFA, vous devez donc cocher la case **Exiger l’authentification multifacteur**. Sélectionnez le bouton **Sélectionner** en bas du volet **Octroyer** afin de fermer le volet. 
 
-21. En bas de la fenêtre **Nouvelle stratégie d’accès conditionnel**, dans le champ **Activer la stratégie**, sélectionnez **On**.
+20. En bas de la fenêtre **Nouvelle stratégie d’accès conditionnel**, dans le champ **Activer la stratégie**, sélectionnez **On**.
 
-22. Notez le message d’avertissement et les options qui s’affichent en bas de la page, qui vous avertissent de ne pas vous verrouiller vous-même. Sélectionnez l’option **Je comprends que mon compte sera affecté par cette stratégie. Continuer malgré tout.** En fait, Holly ne sera pas affectée, car elle est membre du groupe de projet pilote M365, qui est exclu de cette stratégie.
+21. Notez le message d’avertissement et les options qui s’affichent en bas de la page, qui vous avertissent de ne pas vous verrouiller vous-même. Sélectionnez l’option **Je comprends que mon compte sera affecté par cette stratégie. Continuer malgré tout.** En fait, Holly ne sera pas affectée, car elle est membre du groupe de projet pilote M365, qui est exclu de cette stratégie.
 
-23. Sélectionnez le bouton **Créer** pour créer la stratégie.
+22. Sélectionnez le bouton **Créer** pour créer la stratégie.
 
-24. Dans la fenêtre **Accès conditionnel | Stratégies** qui s’affiche, vérifiez que la stratégie **MFA pour tous les utilisateurs Microsoft 365** s’affiche et que son **État** est **Activée**.
+23. Dans la fenêtre **Accès conditionnel | Stratégies** qui s’affiche, vérifiez que la stratégie **MFA pour tous les utilisateurs Microsoft 365** s’affiche et que son **État** est **Activée**.
 
-25. Restez connecté à LON-CL1 avec tous vos onglets de navigateur Microsoft Edge ouverts pour la tâche suivante.
+24. Restez connecté à LON-CL1 avec tous vos onglets de navigateur Microsoft Edge ouverts pour la tâche suivante.
 
 
 ### Tâche 4 : Tester MFA pour un utilisateur inclus et un utilisateur exclu
@@ -331,13 +327,13 @@ Le Directeur technique tient beaucoup à l’implémentation du verrouillage int
 
 16. Dans votre navigateur, fermez l’onglet **Modifier le mot de passe**. 
 
-17. Vous allez maintenant tester la fonctionnalité de seuil de verrouillage. Pour cela, vous aller utiliser le compte de Laura Atkin, que vous avez créé lors d’un exercice de labo précédent. Sélectionnez l’icône utilisateur d’Holly Dickson dans le coin supérieur droit de l’écran puis, dans le menu qui s’affiche, sélectionnez **Se déconnecter**.  
+17. Vous allez maintenant tester la fonctionnalité de seuil de verrouillage. Vous allez le faire à l’aide du compte Adele Vance. Sélectionnez l’icône utilisateur d’Holly Dickson dans le coin supérieur droit de l’écran puis, dans le menu qui s’affiche, sélectionnez **Se déconnecter**.  
 
 18. Une fois que vous êtes déconnecté en tant qu’Holly, la fenêtre **Choisir un compte** s’affiche sous l’onglet **Se connecter à Microsoft Entra**. En guise de meilleure pratique lors de la déconnexion d’un service en ligne Microsoft et du basculement d’un utilisateur vers un autre, fermez tous vos onglets de navigateur sauf l’onglet **Se déconnecter** ou **Se connecter**. Dans le cas présent, fermez les autres onglets maintenant et laissez l’onglet **Se connecter** ouvert.  <br/>
 
     Dans la fenêtre **Choisir un compte**, sélectionnez **Utiliser un autre compte**. 
 
-19. Dans la fenêtre **Se connecter**, entrez **laura@xxxxxZZZZZZ.onmicrosoft.com** (où xxxxxZZZZZZ est le préfixe de tenant fourni par votre fournisseur d’hébergement de labo), puis sélectionnez **Suivant**. 
+19. Dans la fenêtre **Se connecter**, entrez **adelev@xxxxxZZZZZZ.onmicrosoft.com** (où xxxxxZZZZZZ est le préfixe de tenant fourni par votre fournisseur d’hébergement de labo), puis sélectionnez **Suivant**. 
 
 20. Dans la fenêtre **Entrer un mot de passe**, entrez une combinaison aléatoire de lettres et de chiffres, puis sélectionnez **Se connecter**. Notez le message d’erreur de mot de passe non valide qui s’affiche. 
 
@@ -345,14 +341,14 @@ Le Directeur technique tient beaucoup à l’implémentation du verrouillage int
     
     Étant donné que vous avez défini le **Seuil de verrouillage** sur **3**, vous devez recevoir un message d’erreur indiquant que ce compte est verrouillé après la troisième tentative de connexion ayant échoué. <br/>
 
-    **Remarque :** Si vous ne recevez pas ce message de verrouillage après la troisième tentative, cela signifie que le système n’a pas encore fini de propager ce seuil de verrouillage dans tout le service. Les modifications seront effectives après quelques minutes. Patientez quelques minutes, puis reconnectez-vous avec un mot de passe incorrect. Les tests de ce labo ont entraîné des résultats variables. La modification se propage parfois presque immédiatement, auquel cas vous êtes verrouillé après la troisième tentative de connexion. D’autres fois, il a fallu entre cinq et dix minutes avant l’affichage du message de verrouillage. Continuez jusqu’à ce que vous receviez le message de verrouillage, après quoi le compte de Laura sera temporairement verrouillé afin d’empêcher tout accès non autorisé.
+    **Remarque :** Si vous ne recevez pas ce message de verrouillage après la troisième tentative, cela signifie que le système n’a pas encore fini de propager ce seuil de verrouillage dans tout le service. Les modifications seront effectives après quelques minutes. Patientez quelques minutes, puis reconnectez-vous avec un mot de passe incorrect. Les tests de ce labo ont entraîné des résultats variables. La modification se propage parfois presque immédiatement, auquel cas vous êtes verrouillé après la troisième tentative de connexion. D’autres fois, il a fallu entre cinq et dix minutes avant l’affichage du message de verrouillage. Continuez jusqu’à ce que vous receviez le message de verrouillage, après quoi le compte d’Adele sera temporairement verrouillé afin d’empêcher tout accès non autorisé.
 
-21. Vous ne pourrez plus vous reconnecter en tant que Laura tant que la **durée de verrouillage de 90 secondes** que vous avez définie précédemment ne se sera pas écoulée. <br/>
+21. Vous ne pourrez plus vous reconnecter en tant qu’Adele tant que la **durée de verrouillage de 90 secondes** que vous avez définie précédemment ne se sera pas écoulée. <br/>
 
-    Une fois que vous avez été verrouillé, attendez 90 secondes, puis reconnectez-vous en tant que **laura@xxxxxZZZZZZ.onmicrosoft.com** (où xxxxxZZZZZZ est le préfixe de locataire qui vous a été attribué par votre fournisseur d’hébergement de labo). Dans le champ **Mot de passe**, saisissez le mot de passe de Laura, qui est le nouveau mot de passe utilisateur que vous avez affecté au compte de Laura lorsque vous l’avez créé. 
+    Une fois que vous avez été verrouillé, attendez 90 secondes, puis reconnectez-vous en tant que **adelev@xxxxxZZZZZZ.onmicrosoft.com** (où xxxxxZZZZZZ est le préfixe de locataire qui vous a été attribué par votre fournisseur d’hébergement de labo). Dans le champ **Mot de passe**, saisissez le mot de passe d’Adele, qui est le mot de passe utilisateur fourni par le fournisseur d’hébergement de votre labo. 
 
-22. L’authentification multifacteur étant activée pour tous les utilisateurs, sauf les membres du groupe du projet pilote M365 (dont Laura n’est pas membre), une fenêtre **Plus d’informations sont requises** s’affiche pour vous permettre de finaliser le processus d’authentification multifacteur pour Laura. Il s’agit de la vérification que votre tentative de connexion à l’aide du mot de passe réel de Laura a réussi.  <br>
+22. L’authentification multifacteur étant activée pour tous les utilisateurs, sauf les membres du groupe de projets pilotes M365 (dont Adele n’est pas membre), une fenêtre **Plus d’informations sont requises** s’affiche pour vous permettre de finaliser le processus d’authentification multifacteur pour Adele. Il s’agit de la vérification que votre tentative de connexion à l’aide du mot de passe réel d’Adele a réussi.  <br>
 
-    **Note :** vous n’avez PAS besoin de finaliser le processus d’authentification multifacteur pour Laura, car il s’agit de votre dernier exercice de labo qui utilise le contrôleur de domaine LON-DC1. Vous pouvez fermer toutes les applications sur LON-DC1.
+    **Remarque :** vous n’avez PAS besoin de finaliser le processus d’authentification multifacteur pour Adele, car il s’agit de votre dernier exercice de labo qui utilise le contrôleur de domaine LON-DC1. Vous pouvez fermer toutes les applications sur LON-DC1.
 
 # Passer au labo 2 – Exercice 2

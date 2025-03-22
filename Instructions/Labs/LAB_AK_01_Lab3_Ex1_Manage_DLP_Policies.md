@@ -131,7 +131,7 @@ Le problème de cette fonctionnalité est que les stratégies DLP ne prennent pa
 
 Pour désactiver ce paramètre, vous devez créer une stratégie pour les application Office dans le Centre d’administration Microsoft Intune. Dans la stratégie que vous créez, vous allez ajouter le paramètre **Désactiver Envoyer vers Kindle** à la stratégie, puis activer ce paramètre. L’activation de ce paramètre dans la stratégie désactive la fonctionnalité **Envoyer vers Kindle** une fois que vous avez terminé de créer la stratégie. À partir de ce moment, les utilisateurs ne pourront plus envoyer de documents Word vers leur bibliothèque Kindle.
 
-**Note :** ce problème est quelque chose que vous devez prendre en compte dans vos déploiements Microsoft 365 réels. Pour plus d’informations sur la fonctionnalité **Envoyer vers Kindle**, consultez https://support.microsoft.com/en-us/office/send-to-kindle-a53d880d-9952-4bf1-abc5-6bce8db5a273.
+**Note :** ce problème est quelque chose que vous devez prendre en compte dans vos déploiements Microsoft 365 réels. Pour plus d’informations sur la fonctionnalité **Envoyer vers Kindle**, consultez https://support.microsoft.com/office/send-to-kindle-a53d880d-9952-4bf1-abc5-6bce8db5a273.
 
 1. Sur LON-CL1, dans votre navigateur Edge, vous devez toujours être connecté à Microsoft 365 en tant que **Holly Dickson**. 
 

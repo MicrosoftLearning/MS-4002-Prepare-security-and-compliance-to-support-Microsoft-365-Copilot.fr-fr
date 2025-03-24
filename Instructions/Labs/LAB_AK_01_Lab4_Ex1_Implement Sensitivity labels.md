@@ -13,7 +13,7 @@ Pour implémenter des étiquettes de confidentialité dans le cadre de votre pro
 
     Vous devriez toujours être connecté à LON-CL1 avec le compte local **adatum\administrateur**, et dans votre navigateur Edge, vous devriez toujours être connecté à Microsoft 365 en tant que **Holly Dickson**. 
 
-2. Dans **Microsoft Edge**, ouvrez un nouvel onglet et entrez (ou copiez et collez) l’URL suivante dans la barre d’adresse : **https://www.microsoft.com/download/details.aspx?id=53018** <br/>
+2. Dans **Microsoft Edge**, ouvrez un nouvel onglet et entrez (ou copiez et collez) l’URL suivante dans la barre d’adresse : **https://www.microsoft.com/en-us/download/confirmation.aspx?id=53018** <br/>
 
     Cette opération démarre le téléchargement pour le **client Protection des données Microsoft Purview**.
 
